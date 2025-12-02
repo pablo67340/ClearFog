@@ -7,7 +7,7 @@
     <parent>
         <artifactId>ClearFog-parent</artifactId>
         <groupId>de.rapha149.clearfog</groupId>
-        <version>1.6.8</version>
+        <version>1.6.9</version>
     </parent>
 
     <artifactId>ClearFog</artifactId>
@@ -16,7 +16,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
-            <version>1.18-R0.1-SNAPSHOT</version>
+            <version>1.21.10-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -113,6 +113,12 @@
             <artifactId>ClearFog-1_21_R5</artifactId>
             <version>${project.parent.version}</version>
             <scope>compile</scope>
-        </dependency>  
+        </dependency>
+        <dependency>
+            <groupId>de.rapha149.clearfog</groupId>
+            <artifactId>ClearFog-1_21_R6</artifactId>
+            <version>${project.parent.version}</version>
+            <scope>compile</scope>
+        </dependency>    
     </dependencies>
 </project>
