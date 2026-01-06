@@ -40,6 +40,7 @@ public final class ClearFog extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        Scheduler.init();
 
         String craftBukkitPackage = Bukkit.getServer().getClass().getPackage().getName();
         String nmsVersion = craftBukkitPackage.contains(".v") ? craftBukkitPackage.split("\\.")[3].substring(1) :
@@ -80,7 +81,7 @@ public final class ClearFog extends JavaPlugin {
         }));
 
         if (config.getBoolean("check-for-updates")) {
-            Bukkit.getScheduler().runTaskAsynchronously(this, () -> {
+            Scheduler.runAsync(() -> {
                 String version = Updates.getAvailableVersion(true);
                 if (version == null)
                     getLogger().info(getMessage("plugin.up_to_date"));

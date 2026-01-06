@@ -1,6 +1,6 @@
 package de.rapha149.clearfog;
 
-import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerChangedWorldEvent;
@@ -10,7 +10,8 @@ public class Events implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        Bukkit.getScheduler().runTask(ClearFog.getInstance(), () -> Util.updateViewDistance(event.getPlayer(), false));
+        Player player = event.getPlayer();
+        Scheduler.runForEntity(player, () -> Util.updateViewDistance(player, false));
     }
 
     @EventHandler
